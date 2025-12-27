@@ -4,23 +4,23 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from mmcv.cnn import Linear, bias_init_with_prob
-from mmcv.utils import TORCH_VERSION, digit_version
+from projects.mmdet3d_plugin.utils.mmengine_compat import (TORCH_VERSION,
+                                                           digit_version)
 
-from mmdet.core import (multi_apply, multi_apply, reduce_mean)
-from mmdet.models.utils.transformer import inverse_sigmoid
-from mmdet.models import HEADS
+from projects.mmdet3d_plugin.utils.mmdet_compat import (HEADS, build_transformer,
+                                                        inverse_sigmoid,
+                                                        multi_apply, reduce_mean)
 from mmdet.models.dense_heads import DETRHead
 from mmdet3d.core.bbox.coders import build_bbox_coder
 from traitlets import import_item
 from projects.mmdet3d_plugin.core.bbox.util import normalize_bbox
 from mmcv.cnn.bricks.transformer import build_positional_encoding
-from mmcv.runner import BaseModule, force_fp32
+from projects.mmdet3d_plugin.utils.mmengine_compat import BaseModule, force_fp32
 from projects.mmdet3d_plugin.models.utils.bricks import run_time
 import numpy as np
 import mmcv
 import cv2 as cv
 from projects.mmdet3d_plugin.bevformer.modules import PerceptionTransformerBEVEncoder
-from mmdet.models.utils import build_transformer
 from mmdet3d.models.builder import build_head
 from mmdet3d.models.dense_heads.free_anchor3d_head import FreeAnchor3DHead
 

@@ -8,11 +8,12 @@ import mmcv
 import os
 import torch
 import warnings
-from mmcv import Config, DictAction
+from mmengine.config import Config, DictAction
 from mmcv.cnn import fuse_conv_bn
-from mmcv.parallel import MMDataParallel, MMDistributedDataParallel
-from mmcv.runner import (get_dist_info, init_dist, load_checkpoint,
-                         wrap_fp16_model)
+from mmengine.dist import get_dist_info, init_dist
+from mmengine.model import (MMDataParallel, MMDistributedDataParallel,
+                            wrap_fp16_model)
+from mmengine.runner.checkpoint import load_checkpoint
 
 from mmdet3d.apis import single_gpu_test
 from mmdet3d.datasets import build_dataset
@@ -127,7 +128,7 @@ def main():
         cfg.merge_from_dict(args.cfg_options)
     # import modules from string list.
     if cfg.get('custom_imports', None):
-        from mmcv.utils import import_modules_from_strings
+        from mmengine.utils import import_modules_from_strings
         import_modules_from_strings(**cfg['custom_imports'])
 
     # import modules from plguin/xx, registry will be updated

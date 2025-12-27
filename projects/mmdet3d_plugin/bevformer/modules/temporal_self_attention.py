@@ -13,9 +13,15 @@ import torch.nn as nn
 from mmcv.cnn import xavier_init, constant_init
 from mmcv.cnn.bricks.registry import ATTENTION
 import math
-from mmcv.runner.base_module import BaseModule, ModuleList, Sequential
-from mmcv.utils import (ConfigDict, build_from_cfg, deprecated_api_warning,
-                        to_2tuple)
+from projects.mmdet3d_plugin.utils.mmengine_compat import (
+    BaseModule,
+    ConfigDict,
+    ModuleList,
+    Sequential,
+    build_from_cfg,
+    deprecated_api_warning,
+    to_2tuple,
+)
 
 from mmcv.utils import ext_loader
 ext_module = ext_loader.load_ext(

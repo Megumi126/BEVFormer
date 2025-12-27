@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import numpy as np
 from PIL import Image
-from mmcv.runner import force_fp32, auto_fp16
+from projects.mmdet3d_plugin.utils.mmengine_compat import auto_fp16, force_fp32
 
 class Grid(object):
     def __init__(self, use_h, use_w, rotate = 1, offset=False, ratio = 0.5, mode=0, prob = 1.):

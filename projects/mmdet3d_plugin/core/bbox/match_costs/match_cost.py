@@ -1,6 +1,6 @@
 import torch
 import mmcv
-from mmdet.core.bbox.match_costs.builder import MATCH_COST
+from projects.mmdet3d_plugin.utils.mmdet_compat import MATCH_COST
 
 
 @MATCH_COST.register_module()

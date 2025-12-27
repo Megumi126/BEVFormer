@@ -10,7 +10,7 @@ from pycocotools.coco import COCO
 
 from mmdet3d.core.bbox import box_np_ops as box_np_ops
 from mmdet3d.datasets import build_dataset
-from mmdet.core.evaluation.bbox_overlaps import bbox_overlaps
+from mmdet.structures.bbox import bbox_overlaps
 
 
 def _poly2mask(mask_ann, img_h, img_w):

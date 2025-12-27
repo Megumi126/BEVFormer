@@ -9,13 +9,20 @@ import warnings
 import numpy as np
 import torch
 import torch.distributed as dist
-from mmcv.parallel import MMDataParallel, MMDistributedDataParallel
-from mmcv.runner import (HOOKS, DistSamplerSeedHook, EpochBasedRunner,
-                         Fp16OptimizerHook, OptimizerHook, build_optimizer,
-                         build_runner, get_dist_info)
-from mmcv.utils import build_from_cfg
-
-from mmdet.core import EvalHook
+from projects.mmdet3d_plugin.utils.mmengine_compat import (
+    HOOKS,
+    DistSamplerSeedHook,
+    EpochBasedRunner,
+    EvalHook,
+    Fp16OptimizerHook,
+    MMDataParallel,
+    MMDistributedDataParallel,
+    OptimizerHook,
+    build_from_cfg,
+    build_optimizer,
+    build_runner,
+    get_dist_info,
+)
 
 from mmdet.datasets import (build_dataset,
                             replace_ImageToTensor)
@@ -197,4 +204,3 @@ def custom_train_detector(model,
     elif cfg.load_from:
         runner.load_checkpoint(cfg.load_from)
     runner.run(data_loaders, cfg.workflow)
-

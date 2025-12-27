@@ -8,8 +8,15 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 from mmcv.cnn import (Linear, build_activation_layer, build_conv_layer, build_norm_layer)
-from mmcv.runner.base_module import BaseModule, ModuleList, Sequential
-from mmcv.utils import (ConfigDict, build_from_cfg, deprecated_api_warning, to_2tuple)
+from projects.mmdet3d_plugin.utils.mmengine_compat import (
+    BaseModule,
+    ConfigDict,
+    ModuleList,
+    Sequential,
+    build_from_cfg,
+    deprecated_api_warning,
+    to_2tuple,
+)
 from mmcv.cnn.bricks.drop import build_dropout
 from mmcv.cnn.bricks.registry import (ATTENTION, FEEDFORWARD_NETWORK, POSITIONAL_ENCODING, TRANSFORMER_LAYER,
                                       TRANSFORMER_LAYER_SEQUENCE)

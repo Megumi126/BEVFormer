@@ -1,4 +1,4 @@
-from mmcv.utils.registry import Registry, build_from_cfg
+from projects.mmdet3d_plugin.utils.mmengine_compat import Registry, build_from_cfg
 
 SAMPLER = Registry('sampler')
 

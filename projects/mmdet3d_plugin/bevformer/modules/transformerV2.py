@@ -2,9 +2,9 @@ import torch
 import torch.nn as nn
 from mmcv.cnn import xavier_init
 from mmcv.cnn.bricks.transformer import build_transformer_layer_sequence
-from mmdet.models.utils.builder import TRANSFORMER
+from projects.mmdet3d_plugin.utils.mmdet_compat import TRANSFORMER
 from torch.nn.init import normal_
-from mmcv.runner.base_module import BaseModule
+from projects.mmdet3d_plugin.utils.mmengine_compat import BaseModule
 from .temporal_self_attention import TemporalSelfAttention
 from .spatial_cross_attention import MSDeformableAttention3D
 from .decoder import CustomMSDeformableAttention

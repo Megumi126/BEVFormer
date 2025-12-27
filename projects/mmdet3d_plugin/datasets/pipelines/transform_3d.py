@@ -2,7 +2,8 @@ import numpy as np
 from numpy import random
 import mmcv
 from mmdet.datasets.builder import PIPELINES
-from mmcv.parallel import DataContainer as DC
+
+from projects.mmdet3d_plugin.utils.mmengine_compat import DataContainer as DC
 
 @PIPELINES.register_module()
 class PadMultiViewImage(object):

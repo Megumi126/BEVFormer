@@ -19,9 +19,15 @@ from mmcv.cnn.bricks.registry import (ATTENTION,
                                       TRANSFORMER_LAYER_SEQUENCE)
 from mmcv.cnn.bricks.transformer import TransformerLayerSequence
 import math
-from mmcv.runner.base_module import BaseModule, ModuleList, Sequential
-from mmcv.utils import (ConfigDict, build_from_cfg, deprecated_api_warning,
-                        to_2tuple)
+from projects.mmdet3d_plugin.utils.mmengine_compat import (
+    BaseModule,
+    ConfigDict,
+    ModuleList,
+    Sequential,
+    build_from_cfg,
+    deprecated_api_warning,
+    to_2tuple,
+)
 
 from mmcv.utils import ext_loader
 from .multi_scale_deformable_attn_function import MultiScaleDeformableAttnFunction_fp32, \

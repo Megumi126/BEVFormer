@@ -6,9 +6,11 @@ import random
 from functools import partial
 
 import numpy as np
-from mmcv.parallel import collate
-from mmcv.runner import get_dist_info
-from mmcv.utils import Registry, build_from_cfg
+
+from projects.mmdet3d_plugin.utils.mmengine_compat import (Registry,
+                                                           build_from_cfg,
+                                                           collate,
+                                                           get_dist_info)
 from torch.utils.data import DataLoader
 
 from mmdet.datasets.samplers import GroupSampler
@@ -104,7 +106,8 @@ def worker_init_fn(worker_id, num_workers, rank, seed):
 
 # Copyright (c) OpenMMLab. All rights reserved.
 import platform
-from mmcv.utils import Registry, build_from_cfg
+
+from projects.mmdet3d_plugin.utils.mmengine_compat import Registry, build_from_cfg
 
 from mmdet.datasets import DATASETS
 from mmdet.datasets.builder import _concat_dataset
