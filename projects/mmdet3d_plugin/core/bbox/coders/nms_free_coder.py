@@ -1,7 +1,6 @@
 import torch
 
-from mmdet.core.bbox import BaseBBoxCoder
-from mmdet.core.bbox.builder import BBOX_CODERS
+from projects.mmdet3d_plugin.utils.mmdet_compat import BaseBBoxCoder, BBOX_CODERS
 from projects.mmdet3d_plugin.core.bbox.util import denormalize_bbox
 import numpy as np
 
@@ -119,4 +118,3 @@ class NMSFreeCoder(BaseBBoxCoder):
         for i in range(batch_size):
             predictions_list.append(self.decode_single(all_cls_scores[i], all_bbox_preds[i]))
         return predictions_list
-

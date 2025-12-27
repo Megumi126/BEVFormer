@@ -3,14 +3,14 @@ import torch
 import torch.nn as nn
 
 from mmcv.cnn import Linear, bias_init_with_prob
-from mmcv.utils import TORCH_VERSION, digit_version
-from mmdet.core import (multi_apply, multi_apply, reduce_mean)
-from mmdet.models.utils.transformer import inverse_sigmoid
-from mmdet.models import HEADS
+from projects.mmdet3d_plugin.utils.mmengine_compat import (TORCH_VERSION,
+                                                           digit_version)
+from projects.mmdet3d_plugin.utils.mmdet_compat import (HEADS, inverse_sigmoid,
+                                                        multi_apply, reduce_mean)
 from mmdet.models.dense_heads import DETRHead
 from mmdet3d.core.bbox.coders import build_bbox_coder
 from projects.mmdet3d_plugin.core.bbox.util import normalize_bbox
-from mmcv.runner import force_fp32, auto_fp16
+from projects.mmdet3d_plugin.utils.mmengine_compat import auto_fp16, force_fp32
 
 
 @HEADS.register_module()

@@ -8,10 +8,11 @@ import os.path as osp
 
 import mmcv
 import torch.distributed as dist
-from mmcv.runner import DistEvalHook as BaseDistEvalHook
-from mmcv.runner import EvalHook as BaseEvalHook
+from projects.mmdet3d_plugin.utils.mmengine_compat import (
+    DistEvalHook as BaseDistEvalHook,
+    EvalHook as BaseEvalHook,
+)
 from torch.nn.modules.batchnorm import _BatchNorm
-from mmdet.core.evaluation.eval_hooks import DistEvalHook
 
 
 def _calc_dynamic_intervals(start_interval, dynamic_interval_list):

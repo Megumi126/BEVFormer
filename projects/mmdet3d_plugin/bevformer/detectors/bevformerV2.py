@@ -7,7 +7,7 @@
 import copy
 from collections import OrderedDict
 import torch
-from mmdet.models import DETECTORS
+from projects.mmdet3d_plugin.utils.mmdet_compat import DETECTORS
 from mmdet3d.core import bbox3d2result
 from mmdet3d.models.detectors.mvx_two_stage import MVXTwoStageDetector
 from mmdet3d.models.builder import build_head

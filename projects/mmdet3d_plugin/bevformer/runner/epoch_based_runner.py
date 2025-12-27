@@ -6,13 +6,13 @@
 import os.path as osp
 import torch
 import mmcv
-from mmcv.runner.base_runner import BaseRunner
-from mmcv.runner.epoch_based_runner import EpochBasedRunner
-from mmcv.runner.builder import RUNNERS
-from mmcv.runner.checkpoint import save_checkpoint
-from mmcv.runner.utils import get_host_info
+from projects.mmdet3d_plugin.utils.mmengine_compat import (BaseRunner,
+                                                           EpochBasedRunner,
+                                                           RUNNERS,
+                                                           DataContainer,
+                                                           get_host_info,
+                                                           save_checkpoint)
 from pprint import pprint
-from mmcv.parallel.data_container import DataContainer
 
 
 @RUNNERS.register_module()

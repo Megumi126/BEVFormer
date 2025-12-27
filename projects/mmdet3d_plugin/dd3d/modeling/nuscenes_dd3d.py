@@ -9,8 +9,8 @@ from detectron2.layers import Conv2d, cat
 from detectron2.modeling.postprocessing import detector_postprocess as resize_instances
 from detectron2.structures import Instances
 from detectron2.utils import comm as d2_comm
-from mmdet.models.builder import HEADS
-from mmcv.runner import force_fp32
+from projects.mmdet3d_plugin.utils.mmdet_compat import HEADS
+from projects.mmdet3d_plugin.utils.mmengine_compat import force_fp32
 
 from projects.mmdet3d_plugin.dd3d.datasets.nuscenes import MAX_NUM_ATTRIBUTES
 from .core import DD3D

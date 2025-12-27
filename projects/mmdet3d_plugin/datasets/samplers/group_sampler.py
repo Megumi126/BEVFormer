@@ -4,7 +4,7 @@ import math
 
 import numpy as np
 import torch
-from mmcv.runner import get_dist_info
+from projects.mmdet3d_plugin.utils.mmengine_compat import get_dist_info
 from torch.utils.data import Sampler
 from .sampler import SAMPLER
 import random
@@ -107,4 +107,3 @@ class DistributedGroupSampler(Sampler):
 
     def set_epoch(self, epoch):
         self.epoch = epoch
-

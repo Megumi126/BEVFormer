@@ -2,8 +2,8 @@
 import argparse
 import tempfile
 import torch
-from mmcv import Config
-from mmcv.runner import load_state_dict
+from mmengine.config import Config
+from mmengine.runner.checkpoint import load_state_dict
 
 from mmdet3d.models import build_detector
 

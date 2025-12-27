@@ -9,7 +9,7 @@ from torch.nn import functional as F
 from detectron2.layers import Conv2d, batched_nms, cat, get_norm
 from detectron2.structures import Boxes, Instances
 from detectron2.utils.comm import get_world_size
-from mmcv.runner import force_fp32
+from projects.mmdet3d_plugin.utils.mmengine_compat import force_fp32
 
 from projects.mmdet3d_plugin.dd3d.layers.iou_loss import IOULoss
 from projects.mmdet3d_plugin.dd3d.layers.normalization import ModuleListDial, Scale

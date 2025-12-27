@@ -1,7 +1,8 @@
 
 # Copyright (c) OpenMMLab. All rights reserved.
 import numpy as np
-from mmcv.parallel import DataContainer as DC
+
+from projects.mmdet3d_plugin.utils.mmengine_compat import DataContainer as DC
 
 from mmdet3d.core.bbox import BaseInstance3DBoxes
 from mmdet3d.core.points import BasePoints

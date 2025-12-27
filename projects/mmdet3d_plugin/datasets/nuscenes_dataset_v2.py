@@ -7,7 +7,7 @@ import torch
 import numpy as np
 from nuscenes.eval.common.utils import quaternion_yaw, Quaternion
 from .nuscnes_eval import NuScenesEval_custom
-from mmcv.parallel import DataContainer as DC
+from projects.mmdet3d_plugin.utils.mmengine_compat import DataContainer as DC
 from collections import defaultdict, OrderedDict
 from projects.mmdet3d_plugin.dd3d.datasets.nuscenes import NuscenesDataset as DD3DNuscenesDataset
 
